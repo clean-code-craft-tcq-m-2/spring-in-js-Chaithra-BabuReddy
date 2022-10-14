@@ -13,14 +13,14 @@ module.exports=function getStatistics(numbers){
     }
 }
 
-function EmailAlert() {
+module.exports=function EmailAlert() {
   this.emailSent = false;
 };
- function LEDAlert() {
+ module.exports=function LEDAlert() {
   this.ledGlows = false;
 };
 
-function StatsAlerter(maxT, alerters) {
+module.exports=function StatsAlerter(maxT, alerters) {
     this.maxT = maxT;
     this.alerters = alerters;
     this.checkAndAlert = function (number) {
