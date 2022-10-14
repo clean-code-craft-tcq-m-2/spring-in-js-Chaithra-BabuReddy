@@ -13,3 +13,21 @@ module.exports=function getStatistics(numbers){
     }
 }
 
+module.exports = function EmailAlert() {
+  this.emailSent = false;
+};
+
+module.exports = function LEDAlert() {
+  this.ledGlows = false;
+};
+
+module.exports = function StatsAlerter(maxT,alerters) {
+function checkAndAlert(number){
+    [emailAlert,ledAlert]=alerters;
+    let max= Math.max(...number);
+    if(max>maxT){
+        emailAlert.emailSent=true; 
+        ledAlert.ledGlows=true;
+    }
+    return '';
+};
