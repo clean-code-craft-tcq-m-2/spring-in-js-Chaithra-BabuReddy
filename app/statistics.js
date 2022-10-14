@@ -20,16 +20,12 @@ module.exports=function EmailAlert() {
   this.ledGlows = false;
 };
 
-module.exports=function StatsAlerter(maxT, alerters) {
-    this.maxT = maxT;
-    this.alerters = alerters;
-    this.checkAndAlert = function (number) {
-        let [emailAlert, ledAlert] = alerters;
-        let max = Math.max(...number);
-        if (max > maxT) {
-            emailAlert.emailSent = true;
-            ledAlert.ledGlows = true;
-        }
-        return true;
-    };
-}
+module.exports = function StatsAlerter(maxT,alerters) {
+function checkAndAlert(number){
+    [emailAlert,ledAlert]=alerters;
+    let max= Math.max(...number);
+    if(max>maxT){
+        emailAlert.emailSent=true; 
+        ledAlert.ledGlows=true;
+    }
+};
