@@ -30,5 +30,6 @@ module.exports=function StatsAlerter(maxT, alerters) {
             emailAlert.emailSent = true;
             ledAlert.ledGlows = true;
         }
+        return true;
     };
 }
